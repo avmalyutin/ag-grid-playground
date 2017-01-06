@@ -22,7 +22,6 @@
                     return self.rowData;
 
                 }, 300);
-
             };
 
 
@@ -38,8 +37,8 @@
 
                 var newItems = [rowToAdd];
 
+                // here I need to get access to the gridMainService
                 var gridMainService = $injector.get('gridMainService');
-
                 gridMainService.gridOptions.api.addItems(newItems);
 
                 index++;

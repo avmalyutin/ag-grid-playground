@@ -4,10 +4,9 @@
 
     "use strict";
 
-    angular.module("gridApp").controller("gridCtrl", ["$q", "gridMainService", function ($q, gridMainService) {
+    angular.module("gridApp").controller("gridCtrl", ["gridMainService", "gridSettingsService", function (gridMainService, gridSettingsService) {
 
             var vm = this;
-
 
             vm.initialLoad = function () {
 
@@ -18,6 +17,15 @@
             };
 
             vm.initialLoad();
+
+            vm.applyCustomSorting = function () {
+                gridSettingsService.sortByProductionDesc();
+            };
+
+            vm.applyDefaultSorting = function () {
+                gridSettingsService.applyDefaults();
+            };
+
 
         }]);
 
