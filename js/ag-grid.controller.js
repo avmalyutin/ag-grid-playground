@@ -4,27 +4,20 @@
 
     "use strict";
 
-    angular.module("gridApp").controller("gridCtrl", ["$scope", "gridMainService", function ($scope, gridMainService) {
+    angular.module("gridApp").controller("gridCtrl", ["$q", "gridMainService", function ($q, gridMainService) {
 
-//            var columnDefs = [
-//                {headerName: "Make", field: "make"},
-//                {headerName: "Model", field: "model"},
-//                {headerName: "Price", field: "price"}
-//            ];
-//
-//            var rowData = [
-//                {make: "Toyota", model: "Celica", price: 35000},
-//                {make: "Ford", model: "Mondeo", price: 32000},
-//                {make: "Porsche", model: "Boxter", price: 72000}
-//            ];
+            var vm = this;
 
-            $scope.gridOptions = gridMainService.gridOptions;
-                    
-                    
-//                    {
-//                columnDefs: columnDefs,
-//                rowData: rowData
-//            };
+
+            vm.initialLoad = function () {
+
+                gridMainService.loadGridOptions().then(function () {
+                    vm.gridOptions = gridMainService.gridOptions;
+                    vm.showGrid = true;
+                });
+            };
+
+            vm.initialLoad();
 
         }]);
 

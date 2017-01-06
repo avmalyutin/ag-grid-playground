@@ -4,15 +4,27 @@
 
     "use strict";
 
-    angular.module("gridApp").service("gridDataService", ["$interval", "$injector", function ($interval, $injector) {
+    angular.module("gridApp").service("gridDataService", ["$injector", "$interval", "$timeout", function ($injector, $interval, $timeout) {
 
             var self = this;
 
-            self.rowData = [
-                {make: "Toyota", model: "Celica", price: 35000},
-                {make: "Ford", model: "Mondeo", price: 32000},
-                {make: "Porsche", model: "Boxter", price: 72000}
-            ];
+            // this function simulates the server response
+            self.loadRowData = function () {
+                return $timeout(function () {
+                    var responseFromServer = [
+                        {make: "Toyota", model: "Celica", price: 35000},
+                        {make: "Ford", model: "Mondeo", price: 32000},
+                        {make: "Porsche", model: "Boxter", price: 72000}
+                    ];
+
+                    self.rowData = responseFromServer;
+
+                    return self.rowData;
+
+                }, 300);
+
+            };
+
 
             // this is the test functionality function to add new row
             var index = 1;
@@ -35,5 +47,4 @@
             }, 500, 10);
 
         }]);
-
 })();

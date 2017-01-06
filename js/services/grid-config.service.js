@@ -4,15 +4,27 @@
 
     "use strict";
 
-    angular.module("gridApp").service("gridConfigService", ["$log", function ($log) {
+    angular.module("gridApp").service("gridConfigService", ["$timeout", function ($timeout) {
 
             var self = this;
 
-            self.columnDefs = [
-                {headerName: "Make", field: "make"},
-                {headerName: "Model", field: "model"},
-                {headerName: "Price", field: "price"}
-            ];
+            self.columnDefs = [];
+
+            self.loadConfigData = function () {
+                return $timeout(function () {
+                    var responseFromServer = [
+                        {headerName: "Make", field: "make"},
+                        {headerName: "Model", field: "model"},
+                        {headerName: "Price", field: "price"}
+                    ];
+
+                    self.columnDefs = responseFromServer;
+
+                    return self.columnDefs;
+
+                }, 400);
+            };
+
 
         }]);
 
