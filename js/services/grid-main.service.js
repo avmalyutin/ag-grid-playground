@@ -1,7 +1,18 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* global angular */
 
+(function () {
 
+    "use strict";
+
+    angular.module("gridApp").service("gridMainService", ["gridConfigService", "gridDataService", function (gridConfigService, gridDataService) {
+
+            var self = this;
+
+            self.gridOptions = {
+                columnDefs: gridConfigService.columnDefs,
+                rowData: gridDataService.rowData
+            };
+
+        }]);
+
+})();
