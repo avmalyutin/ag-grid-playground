@@ -1,0 +1,26 @@
+{
+  "name": "ag-grid-playground",
+  "homepage": "https://github.com/avmalyutin/ag-grid-playground",
+  "authors": [
+    "Oleksandr Malyutin <avmalyutin@gmail.com>"
+  ],
+  "description": "The example of ag-grid usage in angular",
+  "main": "index.html",
+  "keywords": [
+    "ag-grid",
+    "angular"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "ag-grid": "^7.1.0"
+  }
+}

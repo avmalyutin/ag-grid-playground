@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Ag-grid example</title>
+    </head>
+
+    <body ng-app="gridApp" ng-controller="gridCtrl as grid">
+
+        <div style="height: 15%;">
+            <h2>The very basic example of ag-grid with services</h2>
+        </div>
+
+        <div ag-grid="gridOptions" class="ag-fresh" style="height: 85%;"></div>
+
+
+
+
+        <!-- External js code -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/ag-grid/dist/ag-grid.js"></script>
+        <!-- Internal js code -->
+        <script src="js/ag-grid.module.js"></script>
+        <script src="js/ag-grid.controller.js"></script>
+        <script src="js/services/grid-data.service.js"></script>
+        <script src="js/services/grid-main.service.js"></script>
+        <script src="js/services/grid-settings.service.js"></script>
+
+
+    </body>
+</html>
