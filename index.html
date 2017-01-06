@@ -5,11 +5,14 @@
 
     <body ng-app="gridApp" ng-controller="gridCtrl as grid">
 
-        <div style="height: 15%;">
+        <div style="height: 100px;">
             <h2>The very basic example of ag-grid with services</h2>
+
+            <button type="button" ng-click="grid.applyCustomSorting()">Apply custom sorting</button>
+            <button type="button" ng-click="grid.applyDefaultSorting()">Apply default sorting</button>
         </div>
 
-        <div ag-grid="grid.gridOptions" class="ag-fresh" style="height: 85%;" ng-if="grid.showGrid"></div>
+        <div ag-grid="grid.gridOptions" class="ag-fresh" style="height: calc(100% - 100px);" ng-if="grid.showGrid"></div>
 
 
         <!-- External js code -->
